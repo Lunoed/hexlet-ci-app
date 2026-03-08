@@ -1,0 +1,14 @@
+name: test-workflow
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: action/checkout@v4
+            - uses: action/setup-node@v4
+            - name: Setup 
+            run: make setup
+            - name: Tests
+            run: make test
+            - name: Lint
+            run: make lint
